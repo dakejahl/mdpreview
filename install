@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+set -euo pipefail
+cd "$(dirname "$0")"
+
+sudo apt-get install -y \
+  python3-gi \
+  python3-cmarkgfm \
+  python3-pygments \
+  gir1.2-gtk-4.0 \
+  gir1.2-adw-1 \
+  gir1.2-webkit-6.0 \
+  gir1.2-gtksource-5
+
+mkdir -p "${HOME}/.local/bin" "${HOME}/.local/share/applications"
+install -m 755 mdpreview.py "${HOME}/.local/bin/mdpreview"
+install -m 644 mdpreview.desktop "${HOME}/.local/share/applications/mdpreview.desktop"
+if command -v update-desktop-database >/dev/null; then
+  update-desktop-database "${HOME}/.local/share/applications"
+fi
+xdg-mime default mdpreview.desktop text/markdown text/x-markdown
