@@ -1,6 +1,6 @@
 # mdpreview
 
-![mdpreview](screenshot.png)
+![mdpreview](preview.png)
 
 ## Install
 
