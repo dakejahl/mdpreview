@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Markdown Preview
+Comment=Edit Markdown on the left and read it rendered on the right
+Exec=mdpreview %f
+Icon=text-markdown
+Terminal=false
+Categories=Utility;TextEditor;
+MimeType=text/markdown;text/x-markdown;
+StartupNotify=true
+StartupWMClass=io.github.dakejahl.mdpreview
